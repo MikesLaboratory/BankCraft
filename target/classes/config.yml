@@ -1,0 +1,84 @@
+language: en_US
+timezone: "America/New_York"
+currency-enabled: true
+main-currency: USD
+sounds:
+  atm-open: BLOCK_NOTE_BLOCK_PLING
+  banknote-deposit: ENTITY_EXPERIENCE_ORB_PICKUP
+  banknote-withdrawal: ENTITY_EXPERIENCE_ORB_PICKUP
+mongo:
+  use-mongo: false
+  connection-string: mongodb+srv://<user>:<password>@<host>/?retryWrites=true&w=majority
+  database:
+    transactions: "Transactions"
+transactions:
+  wire-transfer: true
+  banknote-withdrawal: true
+  exchange: true
+credit-card:
+  material: PAPER
+  display-name: "<green>Credit Card"
+  custom-model-data: 1
+  lore:
+    - "<gray>Right click to open"
+currencies:
+  USD:
+    symbol: $
+    exchange-rates:
+        USD: 1.0
+        EUR: 0.9
+        GBP: 0.8
+        JPY: 120.0
+  EUR:
+    symbol: €
+    exchange-rates:
+        USD: 1.1
+        EUR: 1.0
+        GBP: 0.9
+        JPY: 130.0
+  GBP:
+    symbol: £
+    exchange-rates:
+        USD: 1.2
+        EUR: 1.1
+        GBP: 1.0
+        JPY: 140.0
+  JPY:
+    symbol: ¥
+    exchange-rates:
+        USD: 0.008
+        EUR: 0.007
+        GBP: 0.007
+        JPY: 1.0
+
+card-types:
+  emerald:
+    display-name: "Emerald Card"
+    exchange-rate: 1.0
+    deposit-limit: 1000
+    withdraw-limit: 1000
+    transfer-limit: 1000
+    daily-withdraw-limit: 1000
+    material: EMERALD
+atm-item:
+    display-name: "<green>ATM"
+    material: EMERALD_BLOCK
+    custom-model-data: 1
+    lore:
+        - "<gray>Click to place the ATM"
+pin-book:
+  pages:
+    - "<red>Your PIN is: {pin}"
+atms: []
+banknotes:
+  USD:
+    1:
+      name: "<gray>Penny"
+      value: 0.01
+      custom-model-data: 1
+      material: GOLD_NUGGET
+      lore:
+        - "<gray>A small coin"
+
+
+
