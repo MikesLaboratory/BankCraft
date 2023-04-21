@@ -1,6 +1,6 @@
 # TrueBank Minecraft Banking Plugin
 
-[![CodeFactor](https://www.codefactor.io/repository/github/mikeslaboratory/bankcraft/badge)](https://www.codefactor.io/repository/github/mikeslaboratory/bankcraft)
+[![CodeFactor](https://www.codefactor.io/repository/github/mikeslaboratory/truebank/badge)](https://www.codefactor.io/repository/github/mikeslaboratory/truebank)
 
 TrueBank is a Minecraft plugin that allows players to use various banking features, such as ATMs, a bank system, a Vault economy manager, credit cards, and wire transfers. With TrueBank, players can securely store their money, transfer funds to other players, and even earn interest on their savings.
 
