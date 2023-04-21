@@ -1,0 +1,7 @@
+main: it.mikeslab.Main
+version: ${project.version}
+name: ${project.name}
+api-version: 1.13
+author: MikesLab
+description: Bank plug-in for Minecraft
+website: mikeslab.it
