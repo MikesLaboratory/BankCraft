@@ -34,8 +34,45 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.command.inventory;
 
+import com.cryptomorin.xseries.XMaterial;
 import de.themoep.inventorygui.GuiElementGroup;
 import de.themoep.inventorygui.GuiPageElement;
 import de.themoep.inventorygui.InventoryGui;
@@ -118,7 +155,7 @@ public class InventoryTransactions {
                 lore.add(Language.getComponentString(LangKey.TRANSACTION_CURRENCY, Map.of("%s", transaction.getCurrency())));
             lore.add(Language.getComponentString(LangKey.TRANSACTION_ID, Map.of("%s", transaction.getId())));
 
-            ItemStack itemStack = ItemStackUtil.createStack(Material.PAPER, displayName, lore);
+            ItemStack itemStack = ItemStackUtil.createStack(XMaterial.PAPER, displayName, lore);
 
 
             group.addElement(new StaticGuiElement('a', itemStack));
@@ -129,12 +166,12 @@ public class InventoryTransactions {
         inventoryGui.addElement(new GuiPageElement('c', new ItemStack(Material.ARROW), GuiPageElement.PageAction.NEXT, Language.getComponentString(LangKey.NEXT_PAGE)));
 
         if(filterDate == null) {
-            inventoryGui.addElement(new StaticGuiElement('d', ItemStackUtil.createStack(Material.BOOK, Language.getComponentString(LangKey.FILTER_BY_DATE)), click -> {
+            inventoryGui.addElement(new StaticGuiElement('d', ItemStackUtil.createStack(XMaterial.BOOK, Language.getComponentString(LangKey.FILTER_BY_DATE)), click -> {
                 openFilterInput(player, ownerUUID);
                 return true;
             }));
         } else {
-            inventoryGui.addElement(new StaticGuiElement('e', ItemStackUtil.createStack(Material.BARRIER, Language.getComponentString(LangKey.REMOVE_DATE_FILTER)), click -> {
+            inventoryGui.addElement(new StaticGuiElement('e', ItemStackUtil.createStack(XMaterial.BARRIER, Language.getComponentString(LangKey.REMOVE_DATE_FILTER)), click -> {
                 getTransactionsInventory(player, ownerUUID, null).show(player);
                 return true;
             }));

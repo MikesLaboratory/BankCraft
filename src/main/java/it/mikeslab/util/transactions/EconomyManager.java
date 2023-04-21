@@ -70,6 +70,60 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.util.transactions;
 
 import com.google.gson.JsonObject;
@@ -398,22 +452,22 @@ public class EconomyManager {
      * Exchange transfer result.
      *
      * @param uuid         the uuid
-     * @param fromCurrency the from currency
-     * @param toCurrency   the to currency
+     * @param fromCurrency the currency from
+     * @param toCurrency   the currency to
      * @param amount       the amount
      * @return the transfer result
      */
     //works only with CurrencySystem Enabled
     public TransferResult exchange(UUID uuid, String fromCurrency, String toCurrency, double amount) {
-        double exchangeRate = CurrencyUtil.getExchangeRates().get(fromCurrency).get(toCurrency);
+        double exchangeRate = CurrencyUtil.getExchangeRates().get(toCurrency).get(fromCurrency);
 
-        double amountInToCurrency = MathUtil.round(amount * exchangeRate);
+        double fromValue = MathUtil.round(amount * exchangeRate);
 
 
-        boolean withdrawSuccess = withdraw(uuid, fromCurrency, amount);
+        boolean withdrawSuccess = withdraw(uuid, fromCurrency, fromValue);
 
         if (withdrawSuccess) {
-            deposit(uuid, toCurrency, amountInToCurrency);
+            deposit(uuid, toCurrency, amount);
             return TransferResult.SUCCESS;
         } else {
             return TransferResult.INSUFFICIENT_FUNDS;

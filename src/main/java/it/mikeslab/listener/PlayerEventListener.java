@@ -34,8 +34,45 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.listener;
 
+import com.cryptomorin.xseries.XSound;
 import it.mikeslab.Main;
 import it.mikeslab.Perms;
 import it.mikeslab.command.inventory.AnvilPinGUI;
@@ -51,6 +88,8 @@ import it.mikeslab.util.currency.CurrencyUtil;
 import it.mikeslab.util.language.LangKey;
 import it.mikeslab.util.language.Language;
 import it.mikeslab.util.transactions.EconomyManager;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -64,6 +103,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
+import java.awt.*;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -214,12 +254,12 @@ public class PlayerEventListener implements Listener {
         }
 
         if (BanknoteUtil.deposit(player, banknote)) {
-            PlayerUtils.playSound(player, Main.getInstance().getConfig().getString("sounds.banknote-deposit"));
+            XSound.play(player.getLocation(), Main.getInstance().getConfig().getString("sounds.banknote-deposit"));
 
-            player.sendActionBar(Language.getComponentString(LangKey.DEPOSITED, Map.of(
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(Language.getComponentString(LangKey.DEPOSITED, Map.of(
                     "%value%", Double.toString(banknote.getValue()),
                     "%currency%", banknote.getCurrency()
-            )));
+            ))));
         } else {
             player.sendMessage(Language.getComponentString(LangKey.DEPOSIT_FAILED));
         }

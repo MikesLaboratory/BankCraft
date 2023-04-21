@@ -16,8 +16,27 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.command.inventory;
 
+import com.cryptomorin.xseries.XMaterial;
 import de.themoep.inventorygui.GuiElementGroup;
 import de.themoep.inventorygui.GuiPageElement;
 import de.themoep.inventorygui.InventoryGui;
@@ -72,7 +91,7 @@ public class InventoryCardType {
             lore.add(Language.getComponentString(LangKey.CARD_WITHDRAW_LIMIT, Map.of("%s", "" + cardType.getWithdrawLimit())));
             lore.add(Language.getComponentString(LangKey.CARD_TRANSFER_LIMIT, Map.of("%s", "" + cardType.getTransferLimit())));
 
-            group.addElement(new StaticGuiElement('a', ItemStackUtil.createStack(cardType.getMaterial(), Translator.legacyTranslate("<bold><yellow>" + cardType.getDisplayName()), lore), e -> {
+            group.addElement(new StaticGuiElement('a', ItemStackUtil.createStack(XMaterial.matchXMaterial(cardType.getMaterial()), Translator.legacyTranslate("<bold><yellow>" + cardType.getDisplayName()), lore), e -> {
                 inventoryGui.close();
                 future.complete(cardType);
                 return true;

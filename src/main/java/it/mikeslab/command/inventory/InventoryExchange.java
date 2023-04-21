@@ -34,8 +34,189 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.command.inventory;
 
+import com.cryptomorin.xseries.XMaterial;
 import de.themoep.inventorygui.DynamicGuiElement;
 import de.themoep.inventorygui.InventoryGui;
 import de.themoep.inventorygui.StaticGuiElement;
@@ -96,18 +277,18 @@ public class InventoryExchange {
 
 
         if(validExchange) {
-            exchangeRate = CurrencyUtil.getExchangeRates().get(currencyFrom).get(currencyTo);
+            exchangeRate = CurrencyUtil.getExchangeRates().get(currencyTo).get(currencyFrom);
         }
 
-        double exchangedValue = MathUtil.round(value * exchangeRate);
+        double fromValue = MathUtil.round(value * exchangeRate);
 
 
-        ItemStack currencyFromStack = currencyFrom == null ? ItemStackUtil.createStack(Material.WHITE_WOOL, Language.getComponentString(LangKey.SELECT_CURRENCY_ITEM_NAME)) : ItemStackUtil.createStack(Material.LIME_WOOL, Translator.legacyTranslate("<green>" + currencyFrom));
-        ItemStack currencyToStack = currencyTo == null ? ItemStackUtil.createStack(Material.WHITE_WOOL, Language.getComponentString(LangKey.SELECT_CURRENCY_ITEM_NAME)) : ItemStackUtil.createStack(Material.LIME_WOOL, Translator.legacyTranslate("<green>" + value + " " + currencyTo));
-        ItemStack exchangeItemStack = validExchange ? ItemStackUtil.createStack(Material.LIME_CONCRETE_POWDER, Translator.legacyTranslate("<green>" + Language.getString(LangKey.EXCHANGE)), Collections.singletonList(Translator.legacyTranslate("<gray>" + (value + " " + currencyFrom) + " -> " + (exchangedValue + " " + currencyTo)))) : ItemStackUtil.createStack(Material.RED_WOOL, Translator.legacyTranslate("<red>" + Language.getComponentString(LangKey.EXCHANGE)));
+        ItemStack currencyFromStack = currencyFrom == null ? ItemStackUtil.createStack(XMaterial.WHITE_WOOL, Language.getComponentString(LangKey.SELECT_CURRENCY_ITEM_NAME)) : ItemStackUtil.createStack(XMaterial.LIME_WOOL, Translator.legacyTranslate("<green>" + currencyFrom));
+        ItemStack currencyToStack = currencyTo == null ? ItemStackUtil.createStack(XMaterial.WHITE_WOOL, Language.getComponentString(LangKey.SELECT_CURRENCY_ITEM_NAME)) : ItemStackUtil.createStack(XMaterial.LIME_WOOL, Translator.legacyTranslate("<green>" + value + " " + currencyTo));
+        ItemStack exchangeItemStack = validExchange ? ItemStackUtil.createStack(XMaterial.LIME_CONCRETE_POWDER, Translator.legacyTranslate("<green>" + Language.getString(LangKey.EXCHANGE)), Collections.singletonList(Translator.legacyTranslate("<gray>" + (fromValue + " " + currencyFrom) + " -> " + (value + " " + currencyTo)))) : ItemStackUtil.createStack(XMaterial.RED_WOOL, Translator.legacyTranslate("<red>" + Language.getComponentString(LangKey.EXCHANGE)));
 
         inventoryGui.addElement(new DynamicGuiElement('a', (viewer) -> {
-            return new StaticGuiElement('a', ItemStackUtil.createStack(Material.SPECTRAL_ARROW, Translator.legacyTranslate("<green>" + Language.getString(LangKey.BALANCE)), messages), click -> {
+            return new StaticGuiElement('a', ItemStackUtil.createStack(XMaterial.SPECTRAL_ARROW, Translator.legacyTranslate("<green>" + Language.getString(LangKey.BALANCE)), messages), click -> {
                 inventoryGui.draw();
                 return true;
             });
@@ -165,7 +346,6 @@ public class InventoryExchange {
             return true;
         }));
 
-        double finalExchangeRate = exchangeRate;
         inventoryGui.addElement(new StaticGuiElement('d', exchangeItemStack, click -> {
             if (validExchange) {
                 TransactionUtil transactionUtil = Main.getInstance().getTransactionUtil();
@@ -175,13 +355,13 @@ public class InventoryExchange {
                     if(transactionUtil.isExchangeTransactionEnabled()) {
                         transactionUtil.addTransaction(new Transaction(Transaction.randomId(), subject.getUniqueId(), subject.getUniqueId(), currencyFrom, Language.getComponentString(LangKey.EXCHANGE_TRANSACTION_REASON,
                                 Map.of("%currencyFrom%", currencyFrom, "%currencyTo%", currencyTo)),
-                                value, System.currentTimeMillis()));
+                                fromValue, System.currentTimeMillis()));
                     }
 
                     player.sendMessage(Language.getComponentString(LangKey.EXCHANGE_PERFORMED, Map.of(
-                            "%value%", "" + value,
+                            "%value%", "" + fromValue,
                             "%currencyFrom%", "" + currencyFrom,
-                            "%finalValue%", "" + (finalExchangeRate * value),
+                            "%finalValue%", "" + value,
                             "%currencyTo%", "" + currencyTo)));
                 } else {
                     player.sendMessage(Language.getComponentString(LangKey.INSUFFICIENT_FUNDS));
@@ -193,7 +373,7 @@ public class InventoryExchange {
             return true;
         }));
 
-        inventoryGui.addElement(new StaticGuiElement('e', ItemStackUtil.createStack(Material.BARRIER, Language.getComponentString(LangKey.CLOSE)), click -> {
+        inventoryGui.addElement(new StaticGuiElement('e', ItemStackUtil.createStack(XMaterial.BARRIER, Language.getComponentString(LangKey.CLOSE)), click -> {
             inventoryGui.close();
             return true;
         }));

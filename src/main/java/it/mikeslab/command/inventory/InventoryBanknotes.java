@@ -34,8 +34,28 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.command.inventory;
 
+import com.cryptomorin.xseries.XMaterial;
+import com.cryptomorin.xseries.XSound;
 import de.themoep.inventorygui.*;
 import it.mikeslab.Main;
 import it.mikeslab.object.Banknote;
@@ -101,7 +121,7 @@ public class InventoryBanknotes {
                 } else {
                     economyManager.withdraw(cardHolder, currency, banknote.getValue());
                     PlayerUtils.giveItem(player, banknote.getItemStack());
-                    PlayerUtils.playSound(player, Main.getInstance().getConfig().getString("sounds.banknote-withdrawal"));
+                    XSound.play(player.getLocation(), Main.getInstance().getConfig().getString("sounds.banknote-withdrawal"));
 
                     TransactionUtil transactionUtil = Main.getInstance().getTransactionUtil();
 
@@ -128,7 +148,7 @@ public class InventoryBanknotes {
         inventoryGui.addElement(new GuiPageElement('b', new ItemStack(Material.REDSTONE), GuiPageElement.PageAction.PREVIOUS, Language.getComponentString(LangKey.PREVIOUS_PAGE)));
         inventoryGui.addElement(new GuiPageElement('c', new ItemStack(Material.ARROW), GuiPageElement.PageAction.NEXT, Language.getComponentString(LangKey.NEXT_PAGE)));
 
-        inventoryGui.addElement(new StaticGuiElement('f', ItemStackUtil.createStack(Material.REDSTONE, Language.getComponentString(LangKey.RETURN_CURRENCIES_SELECTOR)), click -> {
+        inventoryGui.addElement(new StaticGuiElement('f', ItemStackUtil.createStack(XMaterial.REDSTONE, Language.getComponentString(LangKey.RETURN_CURRENCIES_SELECTOR)), click -> {
 
             InventoryCurrencySelector.openCurrencySelector(player).thenAccept(currencySelected -> {
                 InventoryBanknotes.openATM(player, cardHolder, currencySelected, creditCardNumber);
@@ -143,14 +163,14 @@ public class InventoryBanknotes {
             String symbol = CurrencyUtil.getSymbol(currency);
 
 
-            return new StaticGuiElement('e', ItemStackUtil.createStack(Material.SPECTRAL_ARROW, String.format(Language.getComponentString(LangKey.BALANCE_ITEM_NAME), balance + symbol)), click -> {
+            return new StaticGuiElement('e', ItemStackUtil.createStack(XMaterial.SPECTRAL_ARROW, String.format(Language.getComponentString(LangKey.BALANCE_ITEM_NAME), balance + symbol)), click -> {
                 inventoryGui.draw();
                 return true;
             });
         }));
 
         if(CurrencyUtil.isCurrencyEnabled()) {
-            inventoryGui.addElement(new StaticGuiElement('d', ItemStackUtil.createStack(Material.BOOK, Language.getComponentString(LangKey.EXCHANGE_ITEM_NAME)), click -> {
+            inventoryGui.addElement(new StaticGuiElement('d', ItemStackUtil.createStack(XMaterial.BOOK, Language.getComponentString(LangKey.EXCHANGE_ITEM_NAME)), click -> {
                 InventoryExchange.openExchangeInventory(player, offlinePlayer, creditCardNumber, null, null, 0);
                 return true;
             }));
@@ -160,7 +180,7 @@ public class InventoryBanknotes {
 
         inventoryGui.show(player);
 
-        PlayerUtils.playSound(player, Main.getInstance().getConfig().getString("sounds.atm-open"));
+        XSound.play(player.getLocation(), Main.getInstance().getConfig().getString("sounds.atm-open"));
     }
 }
 

@@ -1,6 +1,6 @@
 language: en_US
 timezone: "America/New_York"
-currency-enabled: true
+multi-currency-enabled: true
 main-currency: USD
 sounds:
   atm-open: BLOCK_NOTE_BLOCK_PLING
@@ -67,6 +67,8 @@ atm-item:
     lore:
         - "<gray>Click to place the ATM"
 pin-book:
+  title: "<green>Bank"
+  author: "MikesLab"
   pages:
     - "<red>Your PIN is: {pin}"
 atms: []

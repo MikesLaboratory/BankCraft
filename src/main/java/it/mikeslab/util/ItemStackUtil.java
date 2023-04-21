@@ -16,10 +16,64 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.util;
 
+import com.cryptomorin.xseries.XMaterial;
 import it.mikeslab.Main;
-import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -53,8 +107,8 @@ public class ItemStackUtil {
      * @param displayName the display name
      * @return the item stack
      */
-    public static ItemStack createStack(Material material, String displayName) {
-        ItemStack itemStack = new ItemStack(material);
+    public static ItemStack createStack(XMaterial material, String displayName) {
+        ItemStack itemStack = material.parseItem();
         ItemMeta meta = itemStack.getItemMeta();
         meta.setDisplayName(displayName);
         itemStack.setItemMeta(meta);
@@ -69,8 +123,8 @@ public class ItemStackUtil {
      * @param lore        the lore
      * @return the item stack
      */
-    public static ItemStack createStack(Material material, String displayName, List<String> lore) {
-        ItemStack itemStack = new ItemStack(material);
+    public static ItemStack createStack(XMaterial material, String displayName, List<String> lore) {
+        ItemStack itemStack = material.parseItem();
         ItemMeta meta = itemStack.getItemMeta();
         meta.setDisplayName(displayName);
         meta.setLore(lore);
@@ -89,18 +143,24 @@ public class ItemStackUtil {
      * @param pdcKeyVal       the pdc key val
      * @return the item stack
      */
-    public static ItemStack createStack(Material material, String displayName, List<String> lore, int customModelData, Map<String, String> pdcKeyVal) {
-        ItemStack itemStack = new ItemStack(material);
-        ItemMeta meta = itemStack.getItemMeta();
-        meta.setDisplayName(displayName);
-        meta.setLore(lore);
-        meta.setCustomModelData(customModelData);
+    public static ItemStack createStack(XMaterial material, String displayName, List<String> lore, int customModelData, Map<String, String> pdcKeyVal) {
+        ItemStack itemStack = material.parseItem();
 
-        for(Map.Entry<String, String> entry : pdcKeyVal.entrySet()) {
-            meta.getPersistentDataContainer().set(getNamespaceKey(entry.getKey()), PersistentDataType.STRING, entry.getValue());
+        try {
+
+            ItemMeta meta = itemStack.getItemMeta();
+            meta.setDisplayName(displayName);
+            meta.setLore(lore);
+            meta.setCustomModelData(customModelData);
+
+            for (Map.Entry<String, String> entry : pdcKeyVal.entrySet()) {
+                meta.getPersistentDataContainer().set(getNamespaceKey(entry.getKey()), PersistentDataType.STRING, entry.getValue());
+            }
+
+            itemStack.setItemMeta(meta);
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
-        itemStack.setItemMeta(meta);
         return itemStack;
     }
 
@@ -122,7 +182,7 @@ public class ItemStackUtil {
      * @return the filler
      */
     public static ItemStack getFiller() {
-        ItemStack itemStack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        ItemStack itemStack = XMaterial.GRAY_STAINED_GLASS_PANE.parseItem();
         ItemMeta meta = itemStack.getItemMeta();
         meta.setDisplayName(" ");
         itemStack.setItemMeta(meta);

@@ -16,8 +16,81 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.util.atm;
 
+import com.cryptomorin.xseries.XMaterial;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import it.mikeslab.Main;
@@ -96,11 +169,8 @@ public class ATMUtil {
         // Iterate over the ATM locations in the cache and add them to the configuration section
         int index = 0;
 
-        if(atmLocations.asMap().keySet().isEmpty()) {
-            return;
-        }
-
-        for (Location location : atmLocations.asMap().keySet()) {
+        for (Map.Entry<Location, Boolean> locationEntry : atmLocations.asMap().entrySet()) {
+            Location location = locationEntry.getKey();
             section.set(index + ".world", location.getWorld().getName());
             section.set(index + ".x", location.getBlockX());
             section.set(index + ".y", location.getBlockY());
@@ -121,8 +191,6 @@ public class ATMUtil {
      * @param config the configuration file to load from
      */
     public void loadATMs(FileConfiguration config) {
-        // Remove any existing ATM data from the cache
-        atmLocations.invalidateAll();
 
         // Get the ATM data section from the configuration file
         ConfigurationSection section = config.getConfigurationSection("atms");
@@ -158,7 +226,7 @@ public class ATMUtil {
             String displayName = Translator.legacyTranslate(section.getString("display-name", "ATM"));
             List<String> lore = Translator.legacyListTranslate(section.getStringList("lore"));
             int customModelData = section.getInt("custom-model-data", -1);
-            atmItem = ItemStackUtil.createStack(material, displayName, lore, customModelData, Map.of("atm", "true"));
+            atmItem = ItemStackUtil.createStack(XMaterial.matchXMaterial(material), displayName, lore, customModelData, Map.of("atm", "true"));
         }
 
         return atmItem;

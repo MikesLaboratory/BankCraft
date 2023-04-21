@@ -70,6 +70,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.util.transactions;
 
 import com.google.gson.JsonObject;
@@ -88,27 +106,35 @@ import java.util.*;
 /**
  * A utility class for managing transactions between player accounts.
  */
-@RequiredArgsConstructor
 public class TransactionUtil {
 
     private final GSONUtil gsonUtil = Main.getInstance().getTransactionGson();
     private final boolean useMongo;
     private final MongoDBHandler mongoHandler;
     private final String transactionsCollectionName;
-    @Getter private boolean wireTransferTransactionEnabled, bankNoteTransactionEnabled, exchangeTransactionEnabled;
+    @Getter private final boolean wireTransferTransactionEnabled, bankNoteTransactionEnabled, exchangeTransactionEnabled;
 
     /**
      * Init.
      */
+
+
+    public TransactionUtil(boolean useMongo, MongoDBHandler mongoHandler, String transactionsCollectionName) {
+        this.useMongo = useMongo;
+        this.mongoHandler = mongoHandler;
+        this.transactionsCollectionName = transactionsCollectionName;
+
+        wireTransferTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.wire-transfer");
+        bankNoteTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.banknote-withdrawal");
+        exchangeTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.exchange");
+    }
+
+
     public void init() {
         if(!useMongo) return;
 
         mongoHandler.createCollectionIfNotExists(transactionsCollectionName);
         Bukkit.getLogger().info("Transactions collection initialized.");
-
-        wireTransferTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.wire-transfer");
-        bankNoteTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.banknote-withdrawal");
-        exchangeTransactionEnabled = Main.getInstance().getConfig().getBoolean("transactions.exchange");
     }
 
 
