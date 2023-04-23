@@ -484,6 +484,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ * Version 3, 29 June 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package it.mikeslab.command.inventory;
 
 import com.cryptomorin.xseries.XMaterial;
@@ -546,8 +564,8 @@ public class InventoryExchange {
         }
 
         inventoryGui.addElement(addBalanceElement(inventoryGui, messages));
-        inventoryGui.addElement(addCurrencyFromElement(inventoryGui, player, subject, creditCardNumber, currencyFrom, currencyTo, value));
-        inventoryGui.addElement(addCurrencyToElement(inventoryGui, player, subject, creditCardNumber, currencyFrom, currencyTo, value));
+        inventoryGui.addElement(addCurrencyFromElement(player, subject, creditCardNumber, currencyFrom, currencyTo, value));
+        inventoryGui.addElement(addCurrencyToElement(player, subject, creditCardNumber, currencyFrom, currencyTo, value));
         inventoryGui.addElement(addExchangeElement(inventoryGui, player, subject, validExchange, currencyFrom, currencyTo, value, exchangeRate));
 
         inventoryGui.addElement(addCloseElement(inventoryGui));
@@ -606,7 +624,7 @@ public class InventoryExchange {
     }
 
 
-    private static StaticGuiElement addCurrencyFromElement(InventoryGui inventoryGui, Player player, OfflinePlayer subject, String creditCardNumber, String currencyFrom, String currencyTo, double value) {
+    private static StaticGuiElement addCurrencyFromElement(Player player, OfflinePlayer subject, String creditCardNumber, String currencyFrom, String currencyTo, double value) {
         return new StaticGuiElement('b', createCurrencyFromStack(currencyFrom), click -> {
             openInputAnvil(player, Language.getComponentString(LangKey.EXCHANGE_FROM), "<Currency>").thenAccept(currency -> {
                 if (currency != null) {
@@ -621,7 +639,7 @@ public class InventoryExchange {
         });
     }
 
-    private static StaticGuiElement addCurrencyToElement(InventoryGui inventoryGui, Player player, OfflinePlayer subject, String creditCardNumber, String currencyFrom, String currencyTo, double value) {
+    private static StaticGuiElement addCurrencyToElement(Player player, OfflinePlayer subject, String creditCardNumber, String currencyFrom, String currencyTo, double value) {
         return new StaticGuiElement('c', createCurrencyToStack(currencyTo, value), click -> {
             openInputAnvil(player, Language.getComponentString(LangKey.EXCHANGE_TO), "<Amount> <Currency>").thenAccept(inputValue -> {
                 handleCurrencyToInput(player, subject, creditCardNumber, currencyFrom, currencyTo, value, inputValue);

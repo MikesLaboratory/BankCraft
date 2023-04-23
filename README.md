@@ -14,7 +14,7 @@ __Features__:
 
 ## Getting Started
 
-To use __TrueBank__ on your Minecraft server, you'll need to download the plugin and install it on your server. You can download the plugin from the __BuiltByBit__ website.
+To use __TrueBank__ on your Minecraft server, you'll need to download the plugin and install it on your server. You can download the plugin from the [__BuiltByBit__](https://builtbybit.com/resources/truebank.28195/) website.
 Once you have the plugin installed, you can start using TrueBank's features right away. Players can access ATMs by right-clicking on them, and can create bank accounts by using the /bank command. Players can apply for credit cards using the /creditcard command, and can send and receive wire transfers using the /wiretransfer command.
 
 ## Contributing
@@ -31,4 +31,4 @@ TrueBank was developed by Mike's Laboratory. If you have any questions or feedba
 
 ## BuiltByBit link:
 
-You can purchase the TrueBank plugin on the __BuiltByBit__ website.
+You can purchase the [TrueBank](https://builtbybit.com/resources/truebank.28195/) plugin on the [__BuiltByBit__](https://builtbybit.com/resources/truebank.28195/) website.
